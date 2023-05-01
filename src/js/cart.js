@@ -3,10 +3,31 @@ import { getLocalStorage } from "./utils.mjs";
 function renderCartContents() {
   // Change cartItems to an array
   const cartItems = [];
+
+  const localStore = getLocalStorage("so-cart");
+
   // Push local storage onto array
-  cartItems.push(getLocalStorage("so-cart"));
-  const htmlItems = cartItems.map((item) => cartItemTemplate(item));
-  document.querySelector(".product-list").innerHTML = htmlItems.join("");
+  if (localStore !== null) {
+    cartItems.push(localStore);
+  }
+
+  // Check cart
+  if (checkCartContents(cartItems)) {
+    // Do not map items if cart is empty
+    const htmlItems = cartItems.map((item) => cartItemTemplate(item));
+    document.querySelector(".product-list").innerHTML = htmlItems.join("");
+  } else {
+    return;
+  }
+}
+
+function checkCartContents(cart) {
+  // Return false if cart contents are empty
+  if (cart === null) {
+    return false;
+  } else {
+    return true;
+  }
 }
 
 function cartItemTemplate(item) {
