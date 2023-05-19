@@ -11,12 +11,11 @@ export default async function productDetails(productId) {
 
   product = await findProductById(productId);
 
-  console.log(product);
-
   // once we have the product details we can render out the HTML
   renderProductDetail();
 
   // add a listener to Add to Cart button
+  document.getElementById("addToCart").addEventListener("click", addToCart);
 }
 
 function addToCart() {
@@ -36,13 +35,3 @@ function renderProductDetail() {
     product.DescriptionHtmlSimple;
   document.querySelector("#addToCart").dataset.id = product.Id;
 }
-
-// add to cart button event handler
-async function addToCartHandler(e) {
-  addToCart();
-}
-
-// add listener to Add to Cart button
-document
-  .getElementById("addToCart")
-  .addEventListener("click", addToCartHandler);

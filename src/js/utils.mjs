@@ -27,8 +27,7 @@ export function getParam(param) {
   const queryString = window.location.search;
   // Returns the query parameter like a key:value pair (e.g product=880RR)
   const urlParams = new URLSearchParams(queryString);
-  const product = urlParams.get(param);
-  return product;
+  return urlParams.get(param);
 }
 
 export function renderListWithTemplate(
@@ -38,9 +37,9 @@ export function renderListWithTemplate(
   position = "afterbegin",
   clear = true
 ) {
-  if (clear) {
-    parentElement.innerHTML = "";
-  }
+  // if (clear) {
+  //   parentElement.innerHTML = "";
+  // }
 
   const htmlString = list.map(templateFn);
   parentElement.insertAdjacentHTML(position, htmlString.join(""));

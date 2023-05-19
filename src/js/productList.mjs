@@ -1,11 +1,13 @@
 import { getData } from "./productData.mjs";
 import { renderListWithTemplate } from "./utils.mjs";
 
-export default function productList(category, selector) {
+export default async function productList(selector, category) {
   // get the element we will insert the list into from the selector
   let element = document.querySelector(selector);
+
   // get the list of products
-  let products = getData(category);
+  let products = await getData(category);
+  console.log(products);
   // render out the product list to the element
   renderListWithTemplate(productCardTemplate, element, products);
 }
