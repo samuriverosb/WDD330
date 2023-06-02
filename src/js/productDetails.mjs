@@ -11,6 +11,8 @@ export default async function productDetails(productId) {
 
   product = await findProductById(productId);
 
+  // console.log(product);
+
   // once we have the product details we can render out the HTML
   renderProductDetail();
 
@@ -26,7 +28,7 @@ function renderProductDetail() {
   document.querySelector("#productName").innerHTML = product.Brand.Name;
   document.querySelector("#productNameWithoutBrand").innerHTML =
     product.NameWithoutBrand;
-  document.querySelector("#productImage").src = product.Image;
+  document.querySelector("#productImage").src = product.Images.PrimaryMedium;
   document.querySelector("#productImage").alt = product.Name;
   document.querySelector("#productFinalPrice").innerHTML = product.FinalPrice;
   document.querySelector("#productColorName").innerHTML =
