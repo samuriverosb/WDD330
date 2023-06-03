@@ -80,8 +80,8 @@ export function loadTemplate(path) {
 
 export async function loadHeaderFooter() {
   // load the header and footer templates from partials
-  const footerTemplateFn = loadTemplate("../partials/footer.html");
-  const headerTemplateFn = loadTemplate("../partials/header.html");
+  const footerTemplateFn = loadTemplate("/partials/footer.html");
+  const headerTemplateFn = loadTemplate("/partials/header.html");
 
   // Grab header and footer elements out of the DOM
   let footer_el = document.querySelector("footer");
