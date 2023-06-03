@@ -3,11 +3,14 @@ import { getLocalStorage, renderListWithTemplate } from "./utils.mjs";
 export default function shoppingCart() {
   // creating var to store local storage
   const cartItems = [];
-  cartItems.push(getLocalStorage("so-cart"));
+  let localStorage = getLocalStorage("so-cart");
+  if (localStorage != null)
+    cartItems.push(localStorage);
   console.log(cartItems);
   let outputEl = document.querySelector(".product-list");
   // render out the product list to the element
   renderListWithTemplate(cartItemTemplate, outputEl, cartItems);
+  return cartItems;
 }
 
 function cartItemTemplate(item) {
