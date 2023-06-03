@@ -90,7 +90,13 @@ button {
   border: 0;
   font-size: var(--large-font);
   cursor: pointer;
+  border-radius: 5px;
 }
+
+.button-link {
+  text-decoration: none;
+}
+
 .divider {
   border-bottom: 2px solid var(--primary-color);
 }
@@ -237,6 +243,10 @@ button {
 .cart-card__price {
   grid-row: 2;
   grid-column: 3;
+}
+
+div.button-wrapper {
+  padding: 20px;
 }
 
 @media screen and (min-width: 500px) {
