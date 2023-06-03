@@ -2,14 +2,12 @@ import { getLocalStorage, renderListWithTemplate } from "./utils.mjs";
 
 export default function shoppingCart() {
   // creating var to store local storage
-  const cartItems = [];
-  let localStorage = getLocalStorage("so-cart");
-  if (localStorage != null)
-    cartItems.push(localStorage);
-  console.log(cartItems);
+  const cartItems = getLocalStorage("so-cart");
   let outputEl = document.querySelector(".product-list");
+
   // render out the product list to the element
   renderListWithTemplate(cartItemTemplate, outputEl, cartItems);
+
   return cartItems;
 }
 
@@ -17,7 +15,7 @@ function cartItemTemplate(item) {
   const newItem = `<li class="cart-card divider">
   <a href="#" class="cart-card__image">
     <img
-      src="${item.Image}"
+      src="${item.Images.PrimaryMedium}"
       alt="${item.Name}"
     />
   </a>
