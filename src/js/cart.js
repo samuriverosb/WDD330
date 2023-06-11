@@ -12,7 +12,7 @@ function cartTotal() {
     totalPrice += item.FinalPrice;
   });
 
-  p.insertAdjacentText("beforeend", `${totalPrice.toFixed(2)}`);
+  p.insertAdjacentText("beforeend", ` $${totalPrice.toFixed(2)}`);
 }
 
 if (items.length == 0) {
