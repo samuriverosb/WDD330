@@ -2,18 +2,16 @@ const baseURL = import.meta.env.VITE_SERVER_URL;
 
 async function convertToJson(res) {
   const data = await res.json();
-    if (res.ok) {
-      return data;
-    } else {
-      throw { name: 'servicesError', message: data };
-    }
+  if (res.ok) {
+    return data;
+  } else {
+    throw { name: "servicesError", message: data };
   }
+}
 
 export async function getProductsByCategory(category) {
   const response = await fetch(baseURL + `products/search/${category}`);
   const data = await convertToJson(response);
-
-  //console.log("data from getData", data);
 
   return data.Result;
 }
@@ -27,12 +25,12 @@ export async function findProductById(id) {
 
 export async function checkout(payload) {
   const options = {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json'
+      "Content-Type": "application/json",
     },
-    body: JSON.stringify(payload)
-  }
+    body: JSON.stringify(payload),
+  };
 
-  return await fetch(baseURL + 'checkout/', options);
+  return await fetch(baseURL + "checkout/", options).then(convertToJson);
 }
