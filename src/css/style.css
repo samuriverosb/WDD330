@@ -259,7 +259,7 @@ fieldset {
   padding: 20px;
 }
 
-label {
+.order-summary label {
   padding-bottom: 5px;
   padding-top: 5px;
 }
@@ -270,7 +270,7 @@ label {
   list-style-type: none;
 }
 
-li {
+.order-summary li {
   display: inline-flex;
 }
 
