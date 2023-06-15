@@ -7,14 +7,13 @@ export default async function productList(selector, category) {
 
   // get the list of products
   let products = await getProductsByCategory(category);
+
   // render out the product list to the element
   renderListWithTemplate(productCardTemplate, element, products);
   document.querySelector(".title").innerHTML = category;
 }
 
 function productCardTemplate(product) {
-  console.log("Product Card Template Data", product);
-
   return `<li class="product-card">
     <a href="/product_pages/index.html?product=${product.Id}">
       <img
