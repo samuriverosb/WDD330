@@ -1,10 +1,15 @@
 import { loadHeaderFooter } from "./utils.mjs";
 import shoppingCart from "./shoppingCart.mjs";
+import { removeCartListeners } from "./shoppingCart.mjs";
 import renderCartSuperScript from "./cartAnimations.mjs";
 
 loadHeaderFooter();
+window.onload = function () {
+  renderCartSuperScript();
+  removeCartListeners();
+};
 
-// calculate total
+// calculate cart total
 function cartTotal() {
   const items = shoppingCart();
   let totalPrice = 0.0;
@@ -21,5 +26,3 @@ function cartTotal() {
 }
 
 cartTotal();
-// Render superscript for number of items in our cart
-window.onload = renderCartSuperScript;
