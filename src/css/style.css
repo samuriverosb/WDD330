@@ -119,6 +119,31 @@ button {
   fill: gray;
 }
 
+/* Cart superscript styling and animation */ 
+
+/* @keyframes wobble {
+  0% { left: 10px;}
+  50% { left: 100px; }
+  75% { right: 2px; }
+  100% { right: 2px; }
+} */
+
+.cart-items-num {
+  background-color: #a4b8c6;
+  padding-left: 4px;
+  padding-right: 4px;
+  color: black;
+  float: right;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 100%;
+  position: absolute;
+  margin-top: -8px;
+  margin-left: 12px;
+  /* animation-name: wobble;
+  animation-duration: 1s; */
+}
+
 /* End cart icon styles */
 
 /* product grid styles */
