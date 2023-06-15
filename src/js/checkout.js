@@ -1,5 +1,6 @@
 import { loadHeaderFooter } from "./utils.mjs";
 import checkoutProcess from "./checkoutProcess.mjs";
+import renderCartSuperScript from "./cartAnimations.mjs";
 
 loadHeaderFooter();
 
@@ -17,3 +18,6 @@ document.forms["checkout"].addEventListener("submit", (e) => {
   e.preventDefault();
   checkoutProcess.checkout(e.target);
 });
+
+// Render superscript for number of items in our cart
+window.onload = renderCartSuperScript;
