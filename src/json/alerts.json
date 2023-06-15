@@ -1,0 +1,12 @@
+[
+  {
+    "message": "This is a test",
+    "backgroud": "darkgreen",
+    "color": "white"
+  },
+  {
+    "message": "Tents are on sale!",
+    "backgroud": "red",
+    "color": "white"
+  }
+]

@@ -164,6 +164,7 @@ button {
 .products {
   padding: 0.5em;
 }
+/* Styles for product lists */
 .product-list {
   display: flex;
   flex-flow: row wrap;
@@ -175,7 +176,13 @@ button {
   text-decoration: none;
   color: var(--dark-grey);
 }
-/* Styles for product lists */
+
+section.alert-list > p {
+  margin: 0 auto;
+  padding: 5px;
+  font-weight: bold;
+}
+
 .product-card {
   flex: 1 1 45%;
   margin: 0.25em;
