@@ -1,5 +1,5 @@
 import { checkout } from "./externalServices.mjs";
-import { getLocalStorage } from "./utils.mjs";
+import { getLocalStorage, setLocalStorage } from "./utils.mjs";
 
 // takes the items currently stored in the cart (localstorage) and returns them in a simplified form.
 function packageItems(items) {
@@ -100,9 +100,12 @@ const checkoutProcess = {
     checkoutJSON.shipping = this.shipping;
     checkoutJSON.items = packageItems(this.list);
     console.log(checkoutJSON);
+
     try {
       const res = await checkout(checkoutJSON);
       console.log(res);
+      setLocalStorage("so-cart", []);
+      location.assign("/checkout/success.html");
     } catch (err) {
       console.log(err);
     }
