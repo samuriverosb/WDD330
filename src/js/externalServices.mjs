@@ -5,7 +5,7 @@ async function convertToJson(res) {
   if (res.ok) {
     return data;
   } else {
-    throw { name: "servicesError", message: data };
+    throw {name: "servicesError", message: data};
   }
 }
 
@@ -33,4 +33,17 @@ export async function checkout(payload) {
   };
 
   return await fetch(baseURL + "checkout/", options).then(convertToJson);
+}
+
+export async function loginRequest(credentials) {
+  const options = {
+    body: JSON.stringify(credentials),
+    method: "POST",
+    headers: {
+      "content-type": "application/json"
+    }
+  }
+
+  const response = await fetch("http://server-nodejs.cit.byui.edu:3000/login", options);
+  return await response.json();
 }
