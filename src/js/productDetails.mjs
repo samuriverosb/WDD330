@@ -1,5 +1,6 @@
 import { setLocalStorage, getLocalStorage } from "./utils.mjs";
 import { findProductById } from "./externalServices.mjs";
+import renderCartSuperScript from "./cartAnimations.mjs";
 
 let product = {};
 
@@ -23,6 +24,7 @@ function addToCart() {
   // then add the current product to the list
   cartContents.push(product);
   setLocalStorage("so-cart", cartContents);
+  renderCartSuperScript(); // re-render cart super-script
 }
 
 function renderProductDetail() {
