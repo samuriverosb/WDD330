@@ -5,7 +5,6 @@ import renderCartSuperScript from "./cartAnimations.mjs";
 loadHeaderFooter();
 
 checkoutProcess.init("so-cart", ".order-summary");
-//console.log(checkoutProcess);
 
 document
   .querySelector("#zip")

@@ -119,6 +119,8 @@ button {
   fill: gray;
 }
 
+/* End cart icon styles */
+
 /* Cart superscript styling and animation */ 
 
 /* @keyframes wobble {
@@ -144,7 +146,13 @@ button {
   animation-duration: 1s; */
 }
 
-/* End cart icon styles */
+.cart-card span.remove-item {
+  position: relative;
+  color: red;
+  padding: 10px;
+  grid-row: 1 / 3;
+  padding-bottom: 75px;
+}
 
 /* product grid styles */
 .product-grid {
