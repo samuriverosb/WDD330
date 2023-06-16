@@ -122,28 +122,29 @@ button {
 /* End cart icon styles */
 
 /* Cart superscript styling and animation */ 
+@keyframes cartShake {
+  0% { transform: rotate(-10deg);}
+  25% { transform: rotate(0deg); opacity: 50%}
+  50% { transform: rotate(10deg);}
+  75% { transform: rotate(0deg); opacity: 75%}
+  100% { transform: rotate(-10deg); opacity: 100%;}
+}
 
-/* @keyframes wobble {
-  0% { left: 10px;}
-  50% { left: 100px; }
-  75% { right: 2px; }
-  100% { right: 2px; }
-} */
+.shake {
+  animation: cartShake 0.25s;
+}
 
 .cart-items-num {
   background-color: #a4b8c6;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding: 2px 4px;
   color: black;
   float: right;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: bold;
   border-radius: 100%;
   position: absolute;
   margin-top: -8px;
   margin-left: 12px;
-  /* animation-name: wobble;
-  animation-duration: 1s; */
 }
 
 .cart-card span.remove-item {

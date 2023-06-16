@@ -5,3 +5,8 @@ export default function renderCartSuperScript() {
   const cartNumberEl = document.querySelector("span.cart-items-num");
   cartNumberEl.innerText = getLocalStorage("so-cart").length;
 }
+
+export function animateCart() {
+  const cartEl = document.querySelector("div.cart");
+  cartEl.classList.add("shake");
+}

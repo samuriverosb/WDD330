@@ -12,14 +12,11 @@ window.onload = function () {
 };
 
 function addCartListeners() {
-  const productList = document.querySelectorAll(".cart-card");
+  const productList = document.querySelector(".product-list");
 
-  // loop through items to add event-listener for removing cart items
-  productList.forEach((product) => {
-    const span = product.querySelector(".remove-item");
-    span.addEventListener("click", (e) => {
-      removeItem(e.target.id);
-    });
+  productList.addEventListener("click", (e) => {
+    console.log(e.target);
+    removeItem(e.target.id);
   });
 }
 
@@ -54,10 +51,11 @@ function cartTotal() {
 
   const pNodes = p.childNodes;
 
-  if (pNodes.length === 1) {
-    p.insertAdjacentText("beforeend", ` $${totalPrice.toFixed(2)}`);
+  if (pNodes.length >= 2) {
+    // if we have 2 or more items in our Node, set the second value
+    pNodes[1].nodeValue = ` $${totalPrice.toFixed(2)}`;
   } else {
-    pNodes[1].nodeValue = ""; // if second text node isn't empty, clear it out
+    // otherwise, add a p element to fill our second node value
     p.insertAdjacentText("beforeend", ` $${totalPrice.toFixed(2)}`);
   }
 
