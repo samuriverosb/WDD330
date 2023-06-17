@@ -2,6 +2,7 @@ import { loadHeaderFooter } from "./utils.mjs";
 import shoppingCart from "./shoppingCart.mjs";
 import { setLocalStorage, getLocalStorage } from "./utils.mjs";
 import renderCartSuperScript from "./cartAnimations.mjs";
+import { checkLogin } from "./auth.mjs";
 
 loadHeaderFooter();
 
@@ -9,6 +10,7 @@ window.onload = function () {
   renderCartSuperScript();
   cartTotal();
   addCartListeners();
+  checkLogin();
 };
 
 function addCartListeners() {
