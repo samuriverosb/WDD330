@@ -17,7 +17,7 @@ function addCartListeners() {
   const productList = document.querySelector(".product-list");
 
   productList.addEventListener("click", (e) => {
-    console.log(e.target);
+    // console.log(e.target);
     removeItem(e.target.id);
   });
 }
@@ -32,7 +32,7 @@ function removeItem(id) {
     }
   });
 
-  console.log(cartItems);
+  // console.log(cartItems);
 
   // Set our local storage to the modified list of products
   setLocalStorage("so-cart", cartItems);
