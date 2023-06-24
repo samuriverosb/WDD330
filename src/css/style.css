@@ -317,6 +317,21 @@ fieldset label {
   display: inline-flex;
 }
 
+.order-list {
+  margin: 0 auto;
+}
+
+.orders h2 {
+  margin-left: 140px;
+}
+
+/* Table Styling */
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 6px;
+}
+
 
 li label {
   flex: 1;

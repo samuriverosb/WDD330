@@ -46,8 +46,8 @@ export async function loginRequest(creds) {
   const response = await fetch(baseURL + "login", options).then(convertToJson);
   return response.accessToken;
 }
-  // Add a header for our request called Authorization that will include our token.
-  export async function getOrders(token) {
+// Add a header for our request called Authorization that will include our token.
+export async function getOrders(token) {
   const options = {
     method: "GET",
     // the server will reject our request if we don't include the Authorization header with a valid token!
@@ -56,7 +56,7 @@ export async function loginRequest(creds) {
     },
   };
 
-  const response = await fetch(baseURL + "login", options).then(convertToJson);
+  const response = await fetch(baseURL + "orders", options).then(convertToJson);
   console.log(response);
   return response;
 }
