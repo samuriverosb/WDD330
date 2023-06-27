@@ -275,6 +275,10 @@ section.alert-list > p {
   width: 100%;
 }
 
+.product-detail__add.hide{
+  display: none;
+}
+
 /* Start cart list card styles */
 .cart-card {
   display: grid;
