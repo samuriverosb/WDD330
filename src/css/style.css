@@ -244,6 +244,18 @@ section.alert-list > p {
   margin: 0.5em 0;
 }
 
+.product-card__suggestedPrice {
+  text-decoration: line-through 2px;
+  font-weight: bold;
+}
+.product-card__price {
+  font-weight: bold;
+}
+.product-card__discount {
+  color: red;
+  font-weight: bold;
+}
+
 .card__brand {
   font-size: var(--small-font);
 }

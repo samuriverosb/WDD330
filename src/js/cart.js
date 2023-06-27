@@ -7,10 +7,10 @@ import { checkLogin } from "./auth.mjs";
 loadHeaderFooter();
 
 window.onload = function () {
+  checkLogin();
   renderCartSuperScript();
   cartTotal();
   addCartListeners();
-  checkLogin();
 };
 
 function addCartListeners() {

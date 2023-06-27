@@ -1,6 +1,7 @@
 import { setLocalStorage, getLocalStorage } from "./utils.mjs";
 import { findProductById } from "./externalServices.mjs";
 import renderCartSuperScript, { animateCart } from "./cartAnimations.mjs";
+import { calculateDiscount } from "./productList.mjs";
 
 let product = {};
 
@@ -34,7 +35,15 @@ function renderProductDetail() {
     product.NameWithoutBrand;
   document.querySelector("#productImage").src = product.Images.PrimaryLarge;
   document.querySelector("#productImage").alt = product.Name;
-  document.querySelector("#productFinalPrice").innerHTML = product.FinalPrice;
+  document.querySelector(
+    "#productSuggestedPrice"
+  ).innerHTML = `$${product.SuggestedRetailPrice.toFixed(2)}`;
+  document.querySelector(
+    "#productFinalPrice"
+  ).innerHTML = `$${product.FinalPrice}`;
+  document.querySelector("#productDiscount").innerHTML = `${calculateDiscount(
+    product
+  )}% off!`;
   document.querySelector("#productColorName").innerHTML =
     product.Colors[0].ColorName;
   document.querySelector("#productDescriptionHtmlSimple").innerHTML =
