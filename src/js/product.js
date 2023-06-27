@@ -11,6 +11,6 @@ productDetails(productId);
 
 // Render superscript for number of items in our cart
 window.onload = function () {
-  renderCartSuperScript();
   checkLogin();
+  renderCartSuperScript();
 };
